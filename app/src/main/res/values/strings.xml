@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pomo</string>
+    <string name="mode_focus">Focus</string>
+    <string name="mode_short">Short Break</string>
+    <string name="mode_long">Long Break</string>
+    <string name="start">Start</string>
+    <string name="pause">Pause</string>
+    <string name="reset">Reset</string>
+    <string name="skip">Skip</string>
+    <string name="task_hint">What are you working on?</string>
+    <string name="alarm_sound">Alarm Sound</string>
+    <string name="choose_ringtone">Choose Ringtone</string>
+    <string name="choose_file">Choose from Files</string>
+    <string name="none_selected">Default tone</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="snooze_5">+5 min Snooze</string>
+    <string name="times_up">Time\'s Up</string>
+    <string name="break_over">Break Over</string>
+    <string name="channel_timer_name">Timer</string>
+    <string name="channel_timer_desc">Shows active timer progress</string>
+    <string name="channel_alarm_name">Alarm</string>
+    <string name="channel_alarm_desc">Rings when timer completes</string>
+    <string name="notif_timer_title">Pomo Running</string>
+    <string name="notif_action_pause">Pause</string>
+    <string name="notif_action_stop">Stop</string>
+    <string name="deep_work_timer">Deep Work Timer</string>
+    <string name="current_task">Current Task</string>
+    <string name="session_complete">Session complete · Great work!</string>
+    <string name="break_complete">Break complete · Back to work!</string>
+    <string name="focus_session">Focus Session</string>
+    <string name="short_break">Short Break</string>
+    <string name="long_break">Long Break</string>
+</resources>
