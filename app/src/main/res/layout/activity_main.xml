@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="52dp"
+        android:paddingBottom="48dp"
+        android:paddingHorizontal="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POMO"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="52sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.18"
+            android:textColor="@color/amber"
+            android:shadowColor="#66F5A623"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="24"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DEEP WORK TIMER"
+            android:textSize="11sp"
+            android:letterSpacing="0.3"
+            android:textColor="@color/text_dim"
+            android:layout_marginTop="2dp"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            android:background="@drawable/bg_chip_group"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="6dp">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFocus"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mode_focus"
+                android:textSize="12sp"
+                android:checked="true"
+                app:chipBackgroundColor="@color/chip_bg_selector"
+                app:chipStrokeWidth="0dp"
+                android:textColor="@color/chip_text_selector"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipShort"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mode_short"
+                android:textSize="12sp"
+                app:chipBackgroundColor="@color/chip_bg_selector"
+                app:chipStrokeWidth="0dp"
+                android:textColor="@color/chip_text_selector"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipLong"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mode_long"
+                android:textSize="12sp"
+                app:chipBackgroundColor="@color/chip_bg_selector"
+                app:chipStrokeWidth="0dp"
+                android:textColor="@color/chip_text_selector"/>
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <FrameLayout
+            android:layout_width="290dp"
+            android:layout_height="290dp"
+            android:layout_marginTop="32dp">
+
+            <com.pomo.timer.TimerCircleView
+                android:id="@+id/timerCircle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25:00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="72sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.06"
+                    android:textColor="@color/text_primary"
+                    android:includeFontPadding="false"/>
+
+                <TextView
+                    android:id="@+id/tvSession"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Focus Session"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.18"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_dim"
+                    android:layout_marginTop="4dp"/>
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="4dp">
+
+            <View android:id="@+id/dot1" android:layout_width="8dp" android:layout_height="8dp"
+                android:background="@drawable/dot_selector" android:layout_marginHorizontal="5dp"/>
+            <View android:id="@+id/dot2" android:layout_width="8dp" android:layout_height="8dp"
+                android:background="@drawable/dot_selector" android:layout_marginHorizontal="5dp"/>
+            <View android:id="@+id/dot3" android:layout_width="8dp" android:layout_height="8dp"
+                android:background="@drawable/dot_selector" android:layout_marginHorizontal="5dp"/>
+            <View android:id="@+id/dot4" android:layout_width="8dp" android:layout_height="8dp"
+                android:background="@drawable/dot_selector" android:layout_marginHorizontal="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="24dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReset"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="@string/reset"
+                android:textSize="12sp"
+                android:letterSpacing="0.1"
+                android:textColor="@color/text_secondary"
+                app:strokeColor="@color/border"
+                android:paddingHorizontal="20dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStart"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="@string/start"
+                android:textSize="14sp"
+                android:letterSpacing="0.1"
+                android:layout_marginHorizontal="12dp"
+                android:paddingHorizontal="36dp"
+                app:backgroundTint="@color/amber"
+                android:textColor="@color/bg"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSkip"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="@string/skip"
+                android:textSize="12sp"
+                android:letterSpacing="0.1"
+                android:textColor="@color/text_secondary"
+                app:strokeColor="@color/border"
+                android:paddingHorizontal="20dp"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:hint="@string/task_hint"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            app:boxBackgroundColor="#0DFFFFFF"
+            app:boxStrokeColor="@color/border"
+            app:hintTextColor="@color/text_dim">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_dim"
+                android:textSize="14sp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:imeOptions="actionDone"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@color/surface"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="🔔  ALARM SOUND"
+                        android:textSize="11sp"
+                        android:letterSpacing="0.18"
+                        android:textColor="@color/text_dim"/>
+
+                    <TextView
+                        android:id="@+id/tvAlarmName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Default Tone"
+                        android:textSize="12sp"
+                        android:textColor="@color/amber"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginVertical="16dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnChooseRingtone"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="🎵  Choose Ringtone / Built-in"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_primary"
+                    app:strokeColor="@color/border"
+                    app:iconGravity="textStart"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnChooseFile"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="10dp"
+                    android:text="📂  Choose from Files (mp3, m4a…)"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_primary"
+                    app:strokeColor="@color/border"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
