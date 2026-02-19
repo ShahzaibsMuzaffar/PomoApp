@@ -16,8 +16,17 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Grant gradlew permission
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Make gradlew executable
         run: chmod +x gradlew
+
+      - name: Download gradle wrapper jar
+        run: |
+          mkdir -p gradle/wrapper
+          curl -o gradle/wrapper/gradle-wrapper.jar \
+            https://github.com/gradle/gradle/raw/v8.4.0/gradle/wrapper/gradle-wrapper.jar
 
       - name: Build debug APK
         run: ./gradlew assembleDebug
